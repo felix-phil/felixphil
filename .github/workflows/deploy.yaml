@@ -12,4 +12,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16
-    - run: yarn install && yarn run deploy
+    - run: |
+        git config user.email "www.fleix4real98@gmail.com" &&
+        git config user.name "Felix Philips" &&
+        yarn install && yarn run deploy
