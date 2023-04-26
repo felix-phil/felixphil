@@ -38,13 +38,13 @@ const App = () => {
         </div>
         <About />
         <Experience />
-        <Tech isMobile={isMobile}/>
+        <Tech isMobile={isMobile} />
         <Works />
         <DownloadResume />
         <Feedbacks />
         <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
+          <Contact isMobile={isMobile} />
+          {!isMobile && <StarsCanvas />}
         </div>
       </div>
     </BrowserRouter>

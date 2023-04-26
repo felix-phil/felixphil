@@ -7,8 +7,9 @@ import { textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
+import EarthLottieController from "./lottie/EarthLottieController";
 
-const Contact = () => {
+const Contact = ({ isMobile }) => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -107,7 +108,7 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] "
       >
-        <EarthCanvas />
+        {isMobile ? <EarthLottieController /> : <EarthCanvas />}
       </motion.div>
     </div>
   );

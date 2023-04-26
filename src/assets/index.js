@@ -43,6 +43,7 @@ import hometolet from "./hometolet.png";
 import resume from "./resume.png";
 
 import computer_animation from "./lottie/lottie-computer.json"
+import earth from "./lottie/earth.json";
 
 export {
   logo,
@@ -86,5 +87,6 @@ export {
   materialui,
   resume,
   arrowdown,
-  computer_animation
+  computer_animation,
+  earth
 };
