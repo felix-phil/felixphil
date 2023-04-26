@@ -4,6 +4,7 @@ import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { arrowdown } from "../assets";
 import ComputerLottieControl from "./lottie/ComputerLottieControl";
+import { names } from "../constants";
 
 const Hero = ({ isMobile }) => {
   return (
@@ -17,7 +18,7 @@ const Hero = ({ isMobile }) => {
         </div>
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915eff]">Felix</span>{" "}
+            Hi, I'm <span className="text-[#915eff]">{names.firstName}</span>{" "}
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I develop scalable web servers, <br className="sm:block hidden" />{" "}

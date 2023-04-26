@@ -274,4 +274,46 @@ const projects = [
 ];
 const resume_link =
   "https://drive.google.com/file/d/1Hfain4eQrUkd5Y9GoryEdikJb7bG7DOZ/view?usp=share_link";
-export { services, technologies, experiences, testimonials, projects, resume_link };
+
+const aboutMe = `I'm a computer science graduate from the University of Ilorin,
+and I am an experienced full-stack developer with expertise in
+JavaScript, TypeScript, Python, React, React Native, Node.js, Django,
+Docker, and Kubernetes. Throughout my career, I have worked on various
+projects that involve building scalable web applications, developing
+and maintaining APIs, and creating mobile applications. I am always
+looking to expand my knowledge and skill set, which makes me a quick
+learner and adaptable to new technologies and programming languages.
+One of my greatest strengths is my ability to collaborate effectively
+with other developers and designers. I am a great team player and
+always strive to maintain open communication, which fosters a positive
+and productive work environment. In my free time, I enjoy exploring
+new technologies, reading programming books, and contributing to open
+source projects. I am passionate about creating software that makes a
+difference and positively impacts people's lives. If you're looking
+for a skilled and dedicated full-stack developer who is committed to
+delivering high-quality solutions, please don't hesitate to reach out.
+I would love to hear about your project and how I can help bring it to
+life.`;
+const names = {
+  firstName: "Felix",
+  lastName: "Philips",
+}
+const emailJSParameters = {
+  serviceId: "service_vgs1pyp",
+  templateId: "template_m542zef",
+  publicKey: "Ym2iABbzyzj5pMQZb",
+  toEmail: "devfelixphil@gmail.com",
+  toName: "Felix Philips"
+}
+
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  projects,
+  resume_link,
+  aboutMe,
+  names,
+  emailJSParameters
+};

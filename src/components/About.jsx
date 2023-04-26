@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { services } from "../constants";
+import { aboutMe, services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
@@ -37,23 +37,30 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
+  const [collapsedText, setCollapsedText] = useState(true);
   return (
     <React.Fragment>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
-      >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and React
-        Native. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable and user-friendly solutions that solves
-        real-world problems. Let's work together to bring your project ideas to
-        life!
-      </motion.p>
+      <div className="flex flex-col">
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className={`mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] ${
+            collapsedText && "line-clamp-4"
+          }`}
+        >
+          {aboutMe}
+        </motion.p>
+        <button
+          type="button"
+          onClick={() => setCollapsedText((prev) => !prev)}
+          className="mt-5 bg-tertiary py-3 px-8 outline-none font-bold w-fit text-white shadow-md shadow-primary rounded-xl disabled:opacity-50"
+        >
+          {collapsedText ? "See more" : "Collapse"}
+        </button>
+      </div>
       <div className="mt-20 flex flex-wrap gap-10 items-center">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />

@@ -8,6 +8,7 @@ import { SectionWrapper } from "../hoc";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../utils/motion";
 import EarthLottieController from "./lottie/EarthLottieController";
+import { emailJSParameters } from "../constants";
 
 const Contact = ({ isMobile }) => {
   const formRef = useRef();
@@ -27,16 +28,16 @@ const Contact = ({ isMobile }) => {
     setLoading(true);
     try {
       const result = await emailjs.send(
-        "service_vgs1pyp",
-        "template_m542zef",
+        emailJSParameters.serviceId,
+        emailJSParameters.templateId,
         {
           from_name: form.name,
-          to_name: "Felix Philips",
+          to_name: emailJSParameters.toName,
           from_email: form.email,
-          to_email: "devfelixphil@gmail.com",
+          to_email: emailJSParameters.toEmail,
           message: form.message,
         },
-        "Ym2iABbzyzj5pMQZb"
+        emailJSParameters.publicKey
       );
 
       window.alert("Thank you! I will get back to you as soon as possible");
@@ -64,6 +65,7 @@ const Contact = ({ isMobile }) => {
           <label className="flex flex-col">
             <span className="font-medium text-white mb-4">Your Name</span>
             <input
+              required
               type="text"
               name="name"
               value={form.name}
@@ -75,6 +77,7 @@ const Contact = ({ isMobile }) => {
           <label className="flex flex-col">
             <span className="font-medium text-white mb-4">Your Email</span>
             <input
+              required
               type="email"
               name="email"
               value={form.email}
@@ -87,6 +90,7 @@ const Contact = ({ isMobile }) => {
             <span className="font-medium text-white mb-4">Your Message</span>
             <textarea
               rows={7}
+              required
               name="message"
               value={form.message}
               onChange={handleChange}
