@@ -42,6 +42,8 @@ import malpdf from "./malpdf.png";
 import hometolet from "./hometolet.png";
 import resume from "./resume.png";
 
+import computer_animation from "./lottie/lottie-computer.json"
+
 export {
   logo,
   backend,
@@ -83,5 +85,6 @@ export {
   azure,
   materialui,
   resume,
-  arrowdown
+  arrowdown,
+  computer_animation
 };

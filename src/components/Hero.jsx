@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { arrowdown } from "../assets";
+import ComputerLottieControl from "./lottie/ComputerLottieControl";
 
-const Hero = () => {
+const Hero = ({ isMobile }) => {
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -24,7 +25,8 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <ComputersCanvas />
+
+      {!isMobile ? <ComputersCanvas /> : <ComputerLottieControl />}
       <div className="absolute xs:bottom-10 bottom-32 w-full justify-center items-center flex">
         <a href="#about">
           <motion.div

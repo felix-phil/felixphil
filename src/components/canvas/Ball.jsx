@@ -8,6 +8,7 @@ import {
   useTexture,
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import { motion } from "framer-motion";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -34,12 +35,24 @@ const Ball = (props) => {
   );
 };
 
-const BallCanvas = ({ icon }) => {
-  return (
-    <Canvas
-      frameloop="demand"
-      gl={{ preserveDrawingBuffer: true }}
+const BallCanvas = ({ icon, isMobile, index }) => {
+  return isMobile ? (
+    <motion.div
+      animate={{
+       scale: [1, 1.1, 1]
+      }}
+      transition={{
+        duration: 1.5,
+        delay: index*0.3,
+        repeat: Infinity,
+        repeatType: "loop",
+      }}
+      className="h-[64px] w-[64px] p-2 bg-gray-300 rounded-full"
     >
+      <img src={icon} className="w-full h-full object-center object-contain" />
+    </motion.div>
+  ) : (
+    <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
