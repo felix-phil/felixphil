@@ -41,6 +41,7 @@ import smsauto from "./smsauto.png";
 import malpdf from "./malpdf.png";
 import hometolet from "./hometolet.png";
 import resume from "./resume.png";
+import hostshare from "./hostshare.png";
 
 import computer_animation from "./lottie/lottie-computer.json"
 import earth from "./lottie/earth.json";
@@ -88,5 +89,6 @@ export {
   resume,
   arrowdown,
   computer_animation,
-  earth
+  earth,
+  hostshare
 };

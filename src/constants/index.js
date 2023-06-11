@@ -34,6 +34,7 @@ import {
   python,
   // azure,
   // materialui,
+  hostshare
 } from "../assets";
 
 export const navLinks = [
@@ -193,6 +194,27 @@ const testimonials = [
 
 const projects = [
   {
+    name: "HostShare",
+    description: "HostShare is an online platform like Airbnb that offers a wide variety of homes and condos for rent. Users can conveniently browse and access numerous properties through the website. HostShare provides a comprehensive selection of accommodations to suit different preferences and budgets. With a user-friendly interface, finding the perfect rental property is just a few clicks away.",
+    tags: [
+      {
+        name: "nodejs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "nextjs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "reactjs",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: hostshare,
+    source_code_link: "https://github.com/felix-phil/hostshare",
+    live_demo_link: "https://hostshare-xi.vercel.app",
+  },
+  {
     name: "SMSAuto",
     description:
       "Web-based platform that allows users to send short messages to multiple phone numbers around the world.",
@@ -249,6 +271,7 @@ const projects = [
     live_demo_link:
       "http://www.amazon.com/gp/mas/dl/android?p=com.pdfmalwaredetector.com",
   },
+  
   {
     name: "Home To Let",
     description:
@@ -297,14 +320,14 @@ life.`;
 const names = {
   firstName: "Felix",
   lastName: "Philips",
-}
+};
 const emailJSParameters = {
   serviceId: "service_vgs1pyp",
   templateId: "template_m542zef",
   publicKey: "Ym2iABbzyzj5pMQZb",
   toEmail: "devfelixphil@gmail.com",
-  toName: "Felix Philips"
-}
+  toName: "Felix Philips",
+};
 
 export {
   services,
@@ -315,5 +338,5 @@ export {
   resume_link,
   aboutMe,
   names,
-  emailJSParameters
+  emailJSParameters,
 };
